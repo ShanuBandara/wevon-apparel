@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEVON APPAREL — Stitching Your Story</title>
+  <meta name="description" content="WEVON APPAREL — Premium customized promotional t-shirts in bulk and ready-to-buy styles. Sri Lanka." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #F0D080;
+      --gold-dark: #9A7530;
+      --gold-pale: rgba(201,168,76,0.10);
+      --navy: #0A1F44;
+      --blue: #1A3A6B;
+      --blue-mid: #2255A4;
+      --blue-light: #D6E4F7;
+      --white: #ffffff;
+      --off-white: #F8F6F0;
+      --gray-light: #F1EFF8;
+      --text-dark: #0A1F44;
+      --text-muted: #5A6A85;
+      --border: rgba(0,0,0,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--gold);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo { color: var(--gold); font-size: 18px; font-weight: 600; letter-spacing: 3px; text-decoration: none; }
+    .logo span { color: var(--white); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--white); font-size: 22px; cursor: pointer; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 5rem 1.5rem 4.5rem;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 600;
+      letter-spacing: 4px;
+      margin-bottom: 0.4rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-tagline {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SECTIONS ── */
+    .section { padding: 4rem 1.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 11px; letter-spacing: 3px; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 4px; }
+    .section-title { font-size: clamp(20px, 3vw, 26px); font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .section-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 0; }
+    .divider { width: 44px; height: 2px; background: var(--gold); margin: 10px 0 2rem; }
+
+    /* ── CATALOGUE ── */
+    #catalogue { background: var(--off-white); }
+
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 1.5px solid rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2.5px solid transparent;
+      margin-bottom: -1.5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .tab-btn i { font-size: 16px; }
+    .tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
+    .tab-btn:hover:not(.active) { color: var(--navy); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .panel-intro { margin-bottom: 1.5rem; }
+    .panel-intro h3 { font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .panel-intro p { font-size: 13px; color: var(--text-muted); }
+
+    .sheet-notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-pale);
+      border: 0.5px solid rgba(201,168,76,0.4);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--gold-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 16px;
+    }
+
+    .tile {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .tile:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+    .tile.custom-tile:hover { border-color: var(--gold); }
+
+    .tile-img { width: 100%; aspect-ratio: 1/1; overflow: hidden; }
+    .tile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .img-ph {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+    }
+    .img-ph.ready { background: var(--blue-light); }
+    .img-ph.custom { background: #FAEEDA; }
+    .img-ph i { font-size: 34px; opacity: 0.35; }
+    .img-ph.ready i { color: var(--blue-mid); }
+    .img-ph.custom i { color: var(--gold-dark); }
+    .img-ph span { font-size: 11px; letter-spacing: 0.5px; opacity: 0.5; }
+    .img-ph.ready span { color: var(--blue-mid); }
+    .img-ph.custom span { color: var(--gold-dark); }
+
+    .tile-body { padding: 11px 13px 13px; }
+    .tile-name { font-size: 13px; font-weight: 600; color: var(--text-dark); line-height: 1.3; margin-bottom: 3px; }
+    .tile-desc { font-size: 11px; color: var(--text-muted); line-height: 1.45; }
+    .tile-price {
+      font-size: 14px; font-weight: 600; color: var(--gold-dark);
+      margin-top: 9px; padding-top: 9px;
+      border-top: 0.5px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .buy-btn {
+      font-size: 11px; padding: 4px 11px; border-radius: 20px;
+      background: var(--navy); color: var(--gold); border: none;
+      cursor: pointer; font-weight: 600; letter-spacing: 0.5px;
+      font-family: 'Inter', sans-serif;
+    }
+    .enquire-btn {
+      width: 100%; margin-top: 9px; padding: 6px 0; border-radius: 6px;
+      background: var(--gold); color: var(--navy); border: none;
+      cursor: pointer; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.5px; font-family: 'Inter', sans-serif;
+    }
+    .enquire-btn:hover { background: var(--gold-light); }
+
+    .loading-msg { font-size: 14px; color: var(--text-muted); text-align: center; padding: 2.5rem; grid-column: 1/-1; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy); }
+    #about .section-label { color: var(--gold); }
+    #about .section-title { color: var(--white); }
+    #about .section-sub { color: rgba(255,255,255,0.6); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .feature-list { display: flex; flex-direction: column; gap: 14px; margin-top: 1.5rem; }
+    .feature-item { display: flex; align-items: flex-start; gap: 10px; }
+    .feature-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+    .feature-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 0.5px solid rgba(201,168,76,0.25);
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .stat-num { font-size: 30px; font-weight: 600; color: var(--gold); }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 0.5px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-items { display: flex; flex-direction: column; gap: 18px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--navy); border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-icon i { color: var(--gold); font-size: 18px; }
+    .contact-label { font-size: 11px; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase; }
+    .contact-val { font-size: 14px; color: var(--navy); font-weight: 500; margin-top: 2px; }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--blue-mid); }
+    .contact-form textarea { height: 100px; resize: vertical; }
+    .contact-form .btn-gold { width: 100%; text-align: center; border-radius: 8px; padding: 12px; font-size: 14px; }
+
+    /* ── SOCIAL ── */
+    #social { background: var(--off-white); text-align: center; }
+    .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 1.5rem; }
+    .social-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 11px 22px;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 8px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      background: var(--white);
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .social-btn i { font-size: 20px; }
+    .social-btn:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+    footer p { color: rgba(255,255,255,0.35); font-size: 12px; }
+    footer span { color: var(--gold); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 62px; left: 0; right: 0;
+        background: var(--navy); padding: 1rem 1.5rem 1.5rem;
+        gap: 1rem; border-bottom: 2px solid var(--gold);
+      }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .tab-btn { padding: 10px 16px; font-size: 13px; }
+      .product-grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">WEVON <span>APPAREL</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#catalogue">Catalogue</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Premium T-shirts · Sri Lanka</div>
+  <h1>WEVON <span>APPAREL</span></h1>
+  <p class="hero-tagline">"Stitching your story"</p>
+  <p>Quality customized promotional t-shirts in bulk &amp; ready-to-wear styles for every occasion.</p>
+  <div class="hero-btns">
+    <a href="#catalogue" class="btn-gold">Shop catalogue</a>
+    <a href="#contact" class="btn-outline">Get a quote</a>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section class="section" id="catalogue">
+  <div class="section-inner">
+    <div class="section-label">our collection</div>
+    <div class="section-title">T-shirt catalogue</div>
+    <div class="section-sub">Two ways to shop — grab one instantly or order in bulk with your branding.</div>
+    <div class="divider"></div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('ready', this)">
+        <i class="ti ti-shopping-bag"></i> Ready to buy
+      </button>
+      <button class="tab-btn" onclick="switchTab('custom', this)">
+        <i class="ti ti-palette"></i> Customized orders
+      </button>
+    </div>
+
+    <!-- READY TO BUY -->
+    <div class="tab-panel active" id="panel-ready">
+      <div class="panel-intro">
+        <h3>Ready to buy</h3>
+        <p>In-stock styles available for immediate purchase — no minimum, no waiting.</p>
+      </div>
+      <div class="sheet-notice">
+        <i class="ti ti-table"></i>
+        Catalogue synced from Google Sheets — update your sheet and products appear here instantly.
+      </div>
+      <div class="product-grid" id="ready-grid">
+        <div class="loading-msg"><i class="ti ti-loader"></i> Loading products…</div>
+      </div>
+    </div>
+
+    <!-- CUSTOMIZED -->
+    <div class="tab-panel" id="panel-custom">
+      <div class="panel-intro">
+        <h3>Customized orders</h3>
+        <p>Your logo, your colours, your story — printed on premium tees. Minimum order quantities apply.</p>
+      </div>
+      <div class="sheet-notice">
+        <i class="ti ti-table"></i>
+        Catalogue synced from Google Sheets — update your sheet and products appear here instantly.
+      </div>
+      <div class="product-grid" id="custom-grid">
+        <div class="loading-msg"><i class="ti ti-loader"></i> Loading products…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">who we are</div>
+        <div class="section-title">About Wevon</div>
+        <div class="divider"></div>
+        <div class="section-sub">We are a Sri Lanka-based apparel brand specializing in high-quality customized promotional t-shirts for businesses and individuals alike.</div>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Bulk orders with custom branding and printing</div></div>
+          <div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Ready-to-buy styles for instant purchase</div></div>
+          <div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Premium fabric, vibrant prints, fast turnaround</div></div>
+          <div class="feature-item"><div class="feature-dot"></div><div class="feature-text">Corporate events, schools, sports teams and more</div></div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num">500+</div><div class="stat-label">Happy clients</div></div>
+        <div class="stat-card"><div class="stat-num">10K+</div><div class="stat-label">Shirts delivered</div></div>
+        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Custom options</div></div>
+        <div class="stat-card"><div class="stat-num">Fast</div><div class="stat-label">Turnaround</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">reach us</div>
+    <div class="section-title">Contact us</div>
+    <div class="section-sub">Have a question or want to place an order? We'd love to hear from you.</div>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-phone"></i></div>
+          <div><div class="contact-label">Phone</div><div class="contact-val">+94 XX XXX XXXX</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-mail"></i></div>
+          <div><div class="contact-label">Email</div><div class="contact-val">info@wevonapparel.com</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+          <div><div class="contact-label">Location</div><div class="contact-val">Sri Lanka, Makandura</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-clock"></i></div>
+          <div><div class="contact-label">Hours</div><div class="contact-val">Mon – Sat, 9am – 6pm</div></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your name" />
+        <input type="email" placeholder="Email address" />
+        <input type="text" placeholder="Subject (e.g. Bulk order enquiry)" />
+        <textarea placeholder="Your message…"></textarea>
+        <a href="#" class="btn-gold" style="text-align:center;">Send message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="section" id="social">
+  <div class="section-inner">
+    <div class="section-label">follow us</div>
+    <div class="section-title">Find us on social media</div>
+    <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+    <div class="social-links">
+      <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i> Instagram</a>
+      <a href="#" class="social-btn"><i class="ti ti-brand-facebook"></i> Facebook</a>
+      <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+      <a href="#" class="social-btn"><i class="ti ti-brand-tiktok"></i> TikTok</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>WEVON APPAREL</span> · Sri Lanka · "Stitching your story"</p>
+</footer>
+
+<script>
+  /* ── TAB SWITCHER ── */
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+  }
+
+  /* ── CATALOGUE DATA ── */
+  // STEP 1: Replace with your Google Sheet ID
+  const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID';
+  // STEP 2: Make sure your sheet tab is named exactly: Catalogue
+  const SHEET_NAME = 'Catalogue';
+  const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+
+  /* Demo products shown before you connect your sheet */
+  const DEMO_READY = [
+    { name: 'Classic white tee', desc: '100% cotton, everyday comfort', price: 'Rs. 1,200', imgUrl: '' },
+    { name: 'Navy polo', desc: 'Smart casual, slim fit', price: 'Rs. 1,800', imgUrl: '' },
+    { name: 'Graphic print tee', desc: 'Bold statement street style', price: 'Rs. 1,500', imgUrl: '' },
+    { name: 'Oversized black tee', desc: 'Relaxed drop-shoulder fit', price: 'Rs. 1,400', imgUrl: '' },
+    { name: 'Striped summer tee', desc: 'Lightweight breathable fabric', price: 'Rs. 1,350', imgUrl: '' },
+    { name: 'Henley collar tee', desc: 'Classic three-button neckline', price: 'Rs. 1,600', imgUrl: '' },
+  ];
+  const DEMO_CUSTOM = [
+    { name: 'Corporate promo pack', desc: 'Min 50 pcs · Logo + text print', imgUrl: '' },
+    { name: 'Event team shirts', desc: 'Min 30 pcs · Full-colour print', imgUrl: '' },
+    { name: 'School / sports uniform', desc: 'Min 20 pcs · Embroidery or print', imgUrl: '' },
+    { name: 'Dry-fit sports tee', desc: 'Min 25 pcs · Moisture-wicking', imgUrl: '' },
+  ];
+
+  function imgBlock(imgUrl, isCustom) {
+    if (imgUrl && imgUrl.trim()) {
+      return `<div class="tile-img"><img src="${imgUrl}" alt="" loading="lazy"></div>`;
+    }
+    const ph = isCustom ? 'custom' : 'ready';
+    const icon = isCustom ? 'ti-color-swatch' : 'ti-shirt';
+    return `<div class="tile-img"><div class="img-ph ${ph}"><i class="ti ${icon}"></i><span>Add photo</span></div></div>`;
+  }
+
+  function readyTile(p) {
+    return `<div class="tile">
+      ${imgBlock(p.imgUrl, false)}
+      <div class="tile-body">
+        <div class="tile-name">${p.name}</div>
+        <div class="tile-desc">${p.desc}</div>
+        <div class="tile-price">
+          <span>${p.price}</span>
+          <button class="buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function customTile(p) {
+    return `<div class="tile custom-tile">
+      ${imgBlock(p.imgUrl, true)}
+      <div class="tile-body">
+        <div class="tile-name">${p.name}</div>
+        <div class="tile-desc">${p.desc}</div>
+        <button class="enquire-btn">Enquire now</button>
+      </div>
+    </div>`;
+  }
+
+  async function loadCatalogue() {
+    let readyItems = [], customItems = [];
+
+    if (SHEET_ID !== 'YOUR_GOOGLE_SHEET_ID') {
+      try {
+        const res = await fetch(SHEET_URL);
+        const text = await res.text();
+        const json = JSON.parse(text.substring(47).slice(0, -2));
+        json.table.rows.forEach(r => {
+          const type = (r.c[3]?.v || '').toLowerCase();
+          const item = {
+            name: r.c[0]?.v || '',
+            desc: r.c[1]?.v || '',
+            price: r.c[2]?.v || '',
+            imgUrl: r.c[4]?.v || '',
+          };
+          if (!item.name) return;
+          if (type.includes('bulk') || type.includes('custom')) customItems.push(item);
+          else readyItems.push(item);
+        });
+      } catch (e) {
+        readyItems = DEMO_READY;
+        customItems = DEMO_CUSTOM;
+      }
+    } else {
+      readyItems = DEMO_READY;
+      customItems = DEMO_CUSTOM;
+    }
+
+    document.getElementById('ready-grid').innerHTML = readyItems.length
+      ? readyItems.map(readyTile).join('')
+      : '<div class="loading-msg">No items found.</div>';
+
+    document.getElementById('custom-grid').innerHTML = customItems.length
+      ? customItems.map(customTile).join('')
+      : '<div class="loading-msg">No items found.</div>';
+  }
+
+  loadCatalogue();
+</script>
+</body>
+</html>
